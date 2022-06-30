@@ -35,12 +35,36 @@ public class Admin {
             }
               
               
+    }
+
+    //DEPENDIENDO DEL NIVEL DE PRIORIDAD SE ENCOLA SEGUN ESTE
+    private void queueLevel(Phones phone, Cola level1, Cola level2, Cola level3) {
+        switch (phone.level) { 
+            case 1:
+            {
+                level1.encolar(phone);
+            }
+            case 2:
+            {
+                level2.encolar(phone);
+            }
+            case 3:
+            {
+                level3.encolar(phone);
+                
+            }
+            default: {
+                    break;
+                    }
+        }
     }    
  
     public void addPhone () {
         //se establecen los limites de nivel
         
         int limit = 4000;
+        int limit2 = 4000;
+
         
         //genera el número random de copas para las tres plantas
       
@@ -50,6 +74,7 @@ public class Admin {
         int levelthropsP1 = rand.nextInt(limit);     
         int levelthropsP2 = rand.nextInt(limit);  
         int levelthropsP3 = rand.nextInt(limit);  
+        int probs = rand.nextInt(limit2);  
         
         if (ProyectoSO2.released == 0) {
               
@@ -58,21 +83,43 @@ public class Admin {
                 // SE AGREGA A PLANTA 1
             
                 Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
-                ProyectoSO2.level1QueueP1.encolar(phone1);
+                queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
                             
                 // SE AGREGA A PLANTA 2
             
                 Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
-                ProyectoSO2.level1QueueP2.encolar(phone2);
+                queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
+
             
                 // SE AGREGA A PLANTA 3
             
                 Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
-                ProyectoSO2.level1QueueP3.encolar(phone3);
+                queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
 
         
         } else {
-            //ME FALTA ESTO AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            
+            if (probs <= 70) {
+                
+                // SE AGREGA A PLANTA 1
+            
+                Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
+                queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
+                            
+                // SE AGREGA A PLANTA 2
+            
+                Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
+
+            
+                // SE AGREGA A PLANTA 3
+            
+                Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
+
+            }
+            
+            
         } 
         
     }
@@ -273,27 +320,7 @@ public class Admin {
     
     
     
-    //DEPENDIENDO DEL NIVEL DE PRIORIDAD SE ENCOLA SEGUN ESTE
-    private void queueLevel(Phones phone, Cola level1, Cola level2, Cola level3) {
-        switch (phone.level) { 
-            case 1:
-            {
-                level1.encolar(phone);
-            }
-            case 2:
-            {
-                level2.encolar(phone);
-            }
-            case 3:
-            {
-                level3.encolar(phone);
-                
-            }
-            default: {
-                    break;
-                    }
-        }
-    }     
+     
     
     
     
