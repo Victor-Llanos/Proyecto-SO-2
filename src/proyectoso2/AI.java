@@ -25,6 +25,7 @@ public class AI {
         //"time" se debe poder modificar por infertaz 
         int time = 15;
 
+
         if (phone != null) {
 
             try {
