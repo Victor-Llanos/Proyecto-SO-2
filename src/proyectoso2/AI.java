@@ -6,8 +6,6 @@ package proyectoso2;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,7 +26,7 @@ public class AI {
         int time = 15;
         
         if(phone!=null){
-            
+                
             try {
                 TimeUnit.SECONDS.sleep(time); 
                 
@@ -56,7 +54,7 @@ public class AI {
                 admin.reEnqueue(phone);
             }
         }
-        ProyectoSO2.contadorParaAgregar++;
+        ProyectoSO2.addingCounter++;
     }
     
 }
