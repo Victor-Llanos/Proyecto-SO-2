@@ -56,7 +56,7 @@ public class AI {
                 admin.reEnqueue(phone);
             }
         }
-        ProyectoSO2.contadorParaAgregar++;
+        ProyectoSO2.addingCounter++;
     }
     
 }
