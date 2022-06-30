@@ -83,17 +83,24 @@ public class Admin {
                 // SE AGREGA A PLANTA 1
             
                 Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
+                phone1.setName("Xperia 10 IV");
+                phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
                             
                 // SE AGREGA A PLANTA 2
             
                 Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                phone1.setName("Xperia Pro-I");
+                phone1.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");
                 queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
 
             
                 // SE AGREGA A PLANTA 3
-            
+
+                
                 Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                phone1.setName("Xperia 10 III");
+                phone1.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");                
                 queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
 
         
@@ -104,17 +111,23 @@ public class Admin {
                 // SE AGREGA A PLANTA 1
             
                 Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
+                phone1.setName("Xperia 10 IV");
+                phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");                
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
                             
                 // SE AGREGA A PLANTA 2
             
                 Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                phone1.setName("Xperia Pro-I");
+                phone1.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");                
                 queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
 
             
                 // SE AGREGA A PLANTA 3
             
                 Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                phone1.setName("Xperia 10 III");
+                phone1.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");                   
                 queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
 
             }
