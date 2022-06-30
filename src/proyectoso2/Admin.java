@@ -212,6 +212,13 @@ public class Admin {
                     }
                     
                     ProyectoSO2.level3QueueP1 = auxQueueLevel3;
+                    Node first = ProyectoSO2.reforcementQueue1.getFirst();
+
+
+                    for (int i = 0; i < ProyectoSO2.reforcementQueue1.getSize(); i++) {
+                        Phones phone = (Phones) first.getData();
+                        phone.sumCounter();
+                        first = first.getNext(); }                    
                     
                     
                    
@@ -259,7 +266,15 @@ public class Admin {
                         }
                     }
                     
-                    ProyectoSO2.level3QueueP2 = auxQueueLevel3;                    
+                    ProyectoSO2.level3QueueP2 = auxQueueLevel3;   
+                    
+                Node first = ProyectoSO2.reforcementQueue2.getFirst();
+
+
+                for (int i = 0; i < ProyectoSO2.reforcementQueue2.getSize(); i++) {
+                    Phones phone = (Phones) first.getData();
+                    phone.sumCounter();
+                    first = first.getNext(); }                    
                     
                     
 
@@ -306,17 +321,20 @@ public class Admin {
                         }
                     }
                     
-                    ProyectoSO2.level3QueueP3 = auxQueueLevel3;                          
-                }
+                    ProyectoSO2.level3QueueP3 = auxQueueLevel3;    
+                    
+                    
+                  Node first = ProyectoSO2.reforcementQueue3.getFirst();
         
         
-        Node first = ProyectoSO2.reforcementQueue.getFirst();
+                for (int i = 0; i < ProyectoSO2.reforcementQueue3.getSize(); i++) {
+                    Phones phone = (Phones) first.getData();
+                    phone.sumCounter();
+                    first = first.getNext(); }                    
+                        }
         
         
-        for (int i = 0; i < ProyectoSO2.reforcementQueue.getSize(); i++) {
-            Phones phone = (Phones) first.getData();
-            phone.sumCounter();
-            first = first.getNext(); }
+
         
         return phoneSelected;
         
@@ -359,7 +377,18 @@ public class Admin {
     
     //función para encolar 
     public void enqueueReforcement(Phones phone) {
-        ProyectoSO2.reforcementQueue.encolar(phone);
+        switch (phone.plant) {
+            case 1: {
+                ProyectoSO2.reforcementQueue1.encolar(phone);
+            } case 2: {
+                ProyectoSO2.reforcementQueue2.encolar(phone);
+                
+            } case 3: {
+                ProyectoSO2.reforcementQueue3.encolar(phone);
+                
+            }
+            
+        }
     }
     
     //funcion para que en caso de un 40% de probabilidad se desencole el primer telefono
@@ -367,13 +396,26 @@ public class Admin {
     public void dequeueReforcement() {
         Random rand = new Random(); 
     
-        int probability = rand.nextInt(100);     
+        int probability1 = rand.nextInt(100);     
+        int probability2 = rand.nextInt(100);     
+        int probability3 = rand.nextInt(100);     
 
-        if (ProyectoSO2.reforcementQueue.getSize() > 0 && probability <= 40){
-            Phones phone = (Phones) ProyectoSO2.reforcementQueue.desencolar();
+        
+        
+        if (ProyectoSO2.reforcementQueue1.getSize() > 0 && probability1 <= 40){
+            Phones phone = (Phones) ProyectoSO2.reforcementQueue1.desencolar();
             reEnqueue(phone);
-            //Se encola según el nivel
-            
+            //Se encola según el nivel           
+        }
+        if (ProyectoSO2.reforcementQueue2.getSize() > 0 && probability2 <= 40){
+            Phones phone = (Phones) ProyectoSO2.reforcementQueue2.desencolar();
+            reEnqueue(phone);
+            //Se encola según el nivel           
+        }
+        if (ProyectoSO2.reforcementQueue3.getSize() > 0 && probability3 <= 40){
+            Phones phone = (Phones) ProyectoSO2.reforcementQueue3.desencolar();
+            reEnqueue(phone);
+            //Se encola según el nivel           
         }
     }
     

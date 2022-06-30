@@ -28,8 +28,17 @@ public class ProyectoSO2 {
     public static Cola level1QueueP3 = new Cola();
     public static Cola level2QueueP3 = new Cola();
     public static Cola level3QueueP3 = new Cola();
+    
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        Admin admin = new Admin();
+        admin.addPhone();
+        AI ai = new AI();
+        
+        Simulacion window = new Simulacion();
+        window.setTitle("Phones Clash Royale");
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
     }
     
 }

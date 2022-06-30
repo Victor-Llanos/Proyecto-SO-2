@@ -18,6 +18,24 @@ public class Simulacion extends javax.swing.JFrame {
         initComponents();
     }
 
+public void updateRevision (Phones phone) {
+    if (phone == null) {
+        idPlant1.setText("No se ha seleccionado");
+        idPlant2.setText("No se ha seleccionado");
+        idPlant3.setText("No se ha seleccionado");
+    } else {
+      
+        if (phone.plant == 1) {
+          idPlant1.setText(Integer.toString(phone.id));
+      } else if(phone.plant == 2) {
+          idPlant2.setText(Integer.toString(phone.id));        
+      } else if (phone.plant == 3){
+          idPlant3.setText(Integer.toString(phone.id));        
+        
+    } 
+    }
+}    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,11 +75,11 @@ public class Simulacion extends javax.swing.JFrame {
         p1c4 = new javax.swing.JList<>();
         jLabel8 = new javax.swing.JLabel();
         p3id = new javax.swing.JTextField();
-        p1name = new javax.swing.JTextField();
+        idPlant1 = new javax.swing.JTextField();
         status = new javax.swing.JTextField();
-        p2name = new javax.swing.JTextField();
+        idPlant2 = new javax.swing.JTextField();
         p2id = new javax.swing.JTextField();
-        p3name = new javax.swing.JTextField();
+        idPlant3 = new javax.swing.JTextField();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane12 = new javax.swing.JScrollPane();
@@ -176,13 +194,13 @@ public class Simulacion extends javax.swing.JFrame {
         });
         jPanel1.add(p3id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 630, 120, -1));
 
-        p1name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        p1name.addActionListener(new java.awt.event.ActionListener() {
+        idPlant1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p1nameActionPerformed(evt);
+                idPlant1ActionPerformed(evt);
             }
         });
-        jPanel1.add(p1name, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 120, -1));
+        jPanel1.add(idPlant1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 120, -1));
 
         status.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         status.addActionListener(new java.awt.event.ActionListener() {
@@ -192,13 +210,13 @@ public class Simulacion extends javax.swing.JFrame {
         });
         jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 170, -1));
 
-        p2name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        p2name.addActionListener(new java.awt.event.ActionListener() {
+        idPlant2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p2nameActionPerformed(evt);
+                idPlant2ActionPerformed(evt);
             }
         });
-        jPanel1.add(p2name, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, -1));
+        jPanel1.add(idPlant2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, -1));
 
         p2id.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         p2id.addActionListener(new java.awt.event.ActionListener() {
@@ -208,13 +226,13 @@ public class Simulacion extends javax.swing.JFrame {
         });
         jPanel1.add(p2id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 120, -1));
 
-        p3name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        p3name.addActionListener(new java.awt.event.ActionListener() {
+        idPlant3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p3nameActionPerformed(evt);
+                idPlant3ActionPerformed(evt);
             }
         });
-        jPanel1.add(p3name, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 590, 120, -1));
+        jPanel1.add(idPlant3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 590, 120, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -264,25 +282,25 @@ public class Simulacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_p3idActionPerformed
 
-    private void p1nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1nameActionPerformed
+    private void idPlant1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlant1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_p1nameActionPerformed
+    }//GEN-LAST:event_idPlant1ActionPerformed
 
     private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_statusActionPerformed
 
-    private void p2nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2nameActionPerformed
+    private void idPlant2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlant2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_p2nameActionPerformed
+    }//GEN-LAST:event_idPlant2ActionPerformed
 
     private void p2idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_p2idActionPerformed
 
-    private void p3nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3nameActionPerformed
+    private void idPlant3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlant3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_p3nameActionPerformed
+    }//GEN-LAST:event_idPlant3ActionPerformed
 
     private void p1idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1idActionPerformed
         // TODO add your handling code here:
@@ -328,8 +346,12 @@ public class Simulacion extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
+    private javax.swing.JTextField idPlant1;
+    private javax.swing.JTextField idPlant2;
+    private javax.swing.JTextField idPlant3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -360,17 +382,14 @@ public class Simulacion extends javax.swing.JFrame {
     private javax.swing.JList<String> p1c3;
     private javax.swing.JList<String> p1c4;
     private javax.swing.JTextField p1id;
-    private javax.swing.JTextField p1name;
     private javax.swing.JList<String> p2c1;
     private javax.swing.JList<String> p2c2;
     private javax.swing.JList<String> p2c3;
     private javax.swing.JTextField p2id;
-    private javax.swing.JTextField p2name;
     private javax.swing.JList<String> p3c1;
     private javax.swing.JList<String> p3c2;
     private javax.swing.JList<String> p3c3;
     private javax.swing.JTextField p3id;
-    private javax.swing.JTextField p3name;
     private javax.swing.JList<String> reC;
     private javax.swing.JTextField status;
     // End of variables declaration//GEN-END:variables
