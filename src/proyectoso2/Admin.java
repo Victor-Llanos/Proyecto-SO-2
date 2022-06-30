@@ -90,6 +90,7 @@ public class Admin {
         }
     }
     
+    
    
     public void selectPhone(int plantN) {
         switch (plantN) {
@@ -106,6 +107,23 @@ public class Admin {
                         //y solo se muestren los que no retornaron null
                         System.out.println("Se desencolaron los teléfonos: " + queue1Phone.id + queue2Phone.id + queue1Phone.id);
                     }
+                    
+                    Cola auxQueue = new Cola();
+                    
+                    while(!ProyectoSO2.level2QueueP1.isEmpty()) {
+                        Phones phone;
+                        phone = (Phones) ProyectoSO2.level2QueueP1.desencolar();
+                        if (phone.counter >= 8) {
+                            phone.resetCounter();
+                            phone.setLevel(1);
+                            ProyectoSO2.level1QueueP1.encolar(phone);
+                        } else {
+                            phone.sumCounter();
+                            auxQueue.encolar(phone);
+                        }
+                    }
+                    
+                    
                     break;
                 }
             case 2:
@@ -133,6 +151,8 @@ public class Admin {
                         break;
                         }
         }
+
+        
     }
     
     
@@ -198,7 +218,8 @@ public class Admin {
 
         if (ProyectoSO2.reforcementQueue.getSize() > 0 && probability <= 40){
             Phones phone = (Phones) ProyectoSO2.reforcementQueue.desencolar();
-            
+            reEnqueue(phone);
+            //Se encola según el nivel
             
         }
     }

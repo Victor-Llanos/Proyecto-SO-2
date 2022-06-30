@@ -28,7 +28,7 @@ public class Cola<T> {
         this.size = 1;
     }
     
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return this.first == null;
     }
     
