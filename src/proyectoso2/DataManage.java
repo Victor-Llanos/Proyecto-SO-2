@@ -57,7 +57,7 @@ public class DataManage {
         try {
             FileWriter fw = new FileWriter(f, true);
             try (PrintWriter pw = new PrintWriter(fw, true)) {
-                pw.print(ph.id +";"+ph.plant+";"+ph.trophies);
+                pw.print(ph.id +";"+ph.plant+";"+ph.trophies+"\n");
             }
         } catch (IOException e) {
 
