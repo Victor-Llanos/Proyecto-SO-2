@@ -18,7 +18,9 @@ public class ProyectoSO2 {
     public static int id = 0;
     public static int released = 0;
     public static int addingCounter = 0;
-    public static Cola reforcementQueue = new Cola();
+    public static Cola reforcementQueue1 = new Cola();
+    public static Cola reforcementQueue2 = new Cola();
+    public static Cola reforcementQueue3 = new Cola();
     public static Cola level1QueueP1 = new Cola();
     public static Cola level2QueueP1 = new Cola();
     public static Cola level3QueueP1 = new Cola();
