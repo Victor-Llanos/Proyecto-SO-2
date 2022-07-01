@@ -31,6 +31,8 @@ public class Simulacion extends javax.swing.JFrame {
     DefaultListModel reforcementQueue3 = new DefaultListModel();    
     public Simulacion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
 public DefaultListModel writeJlist(Cola cola, Node node, DefaultListModel queue) {
@@ -196,6 +198,8 @@ public void updateRevision (Phones phone) {
         cont9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
@@ -277,6 +281,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, -1, -1));
 
         contP3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        contP3.setEnabled(false);
         contP3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contP3ActionPerformed(evt);
@@ -285,6 +290,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(contP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 630, 120, -1));
 
         cont3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont3.setEnabled(false);
         cont3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont3ActionPerformed(evt);
@@ -293,6 +299,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 130, -1));
 
         status.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        status.setEnabled(false);
         status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 statusActionPerformed(evt);
@@ -301,6 +308,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 170, -1));
 
         idPlant2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant2.setEnabled(false);
         idPlant2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idPlant2ActionPerformed(evt);
@@ -309,6 +317,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(idPlant2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, -1));
 
         contP2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        contP2.setEnabled(false);
         contP2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contP2ActionPerformed(evt);
@@ -317,6 +326,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(contP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 120, -1));
 
         idPlant3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant3.setEnabled(false);
         idPlant3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idPlant3ActionPerformed(evt);
@@ -326,23 +336,27 @@ public void updateRevision (Phones phone) {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setEnabled(false);
         jScrollPane11.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 680, 180, -1));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setEnabled(false);
         jScrollPane12.setViewportView(jTextArea2);
 
         jPanel1.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 180, -1));
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
+        jTextArea3.setEnabled(false);
         jScrollPane13.setViewportView(jTextArea3);
 
         jPanel1.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 180, -1));
 
         contP1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        contP1.setEnabled(false);
         contP1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contP1ActionPerformed(evt);
@@ -361,7 +375,7 @@ public void updateRevision (Phones phone) {
                 exitActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, -1, -1));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 20, -1, -1));
 
         jList6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jScrollPane15.setViewportView(jList6);
@@ -386,6 +400,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 130, 130, 170));
 
         idPlant1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        idPlant1.setEnabled(false);
         idPlant1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idPlant1ActionPerformed(evt);
@@ -394,6 +409,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(idPlant1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 120, -1));
 
         cont1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont1.setEnabled(false);
         cont1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont1ActionPerformed(evt);
@@ -402,6 +418,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 130, -1));
 
         cont2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont2.setEnabled(false);
         cont2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont2ActionPerformed(evt);
@@ -410,6 +427,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, 130, -1));
 
         cont4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont4.setEnabled(false);
         cont4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont4ActionPerformed(evt);
@@ -418,6 +436,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, 130, -1));
 
         cont5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont5.setEnabled(false);
         cont5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont5ActionPerformed(evt);
@@ -426,6 +445,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 550, 130, -1));
 
         cont6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont6.setEnabled(false);
         cont6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont6ActionPerformed(evt);
@@ -434,6 +454,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 550, 130, -1));
 
         cont7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont7.setEnabled(false);
         cont7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont7ActionPerformed(evt);
@@ -442,6 +463,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 770, 130, -1));
 
         cont8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont8.setEnabled(false);
         cont8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont8ActionPerformed(evt);
@@ -450,6 +472,7 @@ public void updateRevision (Phones phone) {
         jPanel1.add(cont8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 770, 130, -1));
 
         cont9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cont9.setEnabled(false);
         cont9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cont9ActionPerformed(evt);
