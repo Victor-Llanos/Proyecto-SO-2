@@ -45,7 +45,6 @@ public class Admin {
             }
             case 3: {
                 level3.encolar(phone);
-
             }
             default: {
                 break;
@@ -57,7 +56,7 @@ public class Admin {
 
         int min = 400;
         int max = 1000;
-        int random_int = ThreadLocalRandom.current().nextInt(min,max+1);
+        int random_int = ThreadLocalRandom.current().nextInt(min, max + 1);
 
         for (int i = 0; i < a; i++) {
 
@@ -77,7 +76,6 @@ public class Admin {
         int probs = 100;
 
         //Se suman las copas determinadas por el porcentaje de exitos por pieza del telefono, de cada de telefono
-        Random rand = new Random();
         int screenProbs = ThreadLocalRandom.current().nextInt(1, probs);
         int pinProbs = ThreadLocalRandom.current().nextInt(1, probs);
         int camProbs = ThreadLocalRandom.current().nextInt(1, probs);
@@ -359,7 +357,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(1);
-                    ProyectoSO2.level1QueueP1.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level1QueueP1.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel2.encolar(phone);
@@ -376,7 +376,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(2);
-                    ProyectoSO2.level2QueueP1.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level2QueueP1.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel3.encolar(phone);
@@ -409,7 +411,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(1);
-                    ProyectoSO2.level1QueueP2.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level1QueueP2.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel2.encolar(phone);
@@ -426,7 +430,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(2);
-                    ProyectoSO2.level2QueueP2.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level2QueueP2.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel3.encolar(phone);
@@ -460,7 +466,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(1);
-                    ProyectoSO2.level1QueueP3.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level1QueueP3.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel2.encolar(phone);
@@ -477,7 +485,9 @@ public class Admin {
                 if (phone.counter >= 8) {
                     phone.resetCounter();
                     phone.setLevel(2);
-                    ProyectoSO2.level2QueueP3.encolar(phone);
+                    Phones ph = new Phones(phone.id, phone.level,phone.trophies,phone.plant,phone.good);
+                    ph.setName(phone.getName());
+                    ProyectoSO2.level2QueueP3.encolar(ph);
                 } else {
                     phone.sumCounter();
                     auxQueueLevel3.encolar(phone);
@@ -504,13 +514,16 @@ public class Admin {
         switch (phone.plant) {
             case 1: {
                 queueLevel(phone, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
+                break;
             }
             case 2: {
                 queueLevel(phone, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
+                break;
 
             }
             case 3: {
                 queueLevel(phone, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
+                break;
 
             }
             default: {
@@ -524,13 +537,16 @@ public class Admin {
         switch (phone.plant) {
             case 1: {
                 ProyectoSO2.reforcementQueue1.encolar(phone);
+                break;
             }
             case 2: {
                 ProyectoSO2.reforcementQueue2.encolar(phone);
+                break;
 
             }
             case 3: {
                 ProyectoSO2.reforcementQueue3.encolar(phone);
+                break;
 
             }
 
