@@ -28,7 +28,7 @@ public class DataManage {
         }
     }
 
-    public int readTime() {
+    public static int readTime() {
         String path = "test\\time.txt";
         File f = new File(path);
         int Time = 2;

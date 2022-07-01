@@ -5,7 +5,6 @@
 package proyectoso2;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
@@ -56,6 +55,13 @@ public class AI {
     }
 
     public void battle(Phones[] ph) {
+        try {
+            TimeUnit.SECONDS.sleep(DataManage.readTime());
+
+        } catch (InterruptedException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error inesperado con la AI", "ERROR", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
         Admin admin = new Admin();
         boolean buenos = true;
         Phones ganador = null;
@@ -127,7 +133,7 @@ public class AI {
             for (Phones empatado : empatados) {
                 admin.reEnqueue(empatado);
             }
-            
+
             System.out.println("Empatados:");
             System.out.println(empatados[0].name + " vs. " + empatados[1].name);
         }
