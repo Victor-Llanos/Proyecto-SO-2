@@ -50,6 +50,8 @@ public class ProyectoSO2 {
         
         while (true) {
             phone1 = admin.selectPhone(1);
+            phone1 = admin.selectPhone(2);
+            phone1 = admin.selectPhone(3);
             
             simu.updateQueuesP1(level1QueueP1, level2QueueP1, level3QueueP1, reforcementQueue1);
             simu.updateQueuesP2(level1QueueP2, level2QueueP2, level3QueueP2, reforcementQueue2);
