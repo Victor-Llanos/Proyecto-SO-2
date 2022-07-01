@@ -16,6 +16,9 @@ public class Phones {
     public int plant = 0;
     public int wr;
     boolean good;
+    public String name = "";
+    public String info = "";
+
     
     public Phones (int id, int level, int trophies, int plant){
         this.id = id;
@@ -24,6 +27,25 @@ public class Phones {
         this.trophies = trophies;
         this.plant = plant;
         this.wr = DeckBuilder.deckWR();
+
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+
     }
     
     public void setTrophies(int trophies) {

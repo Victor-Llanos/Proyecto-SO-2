@@ -83,17 +83,24 @@ public class Admin {
                 // SE AGREGA A PLANTA 1
             
                 Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
+                phone1.setName("Xperia 10 IV");
+                phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
                             
                 // SE AGREGA A PLANTA 2
             
                 Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                phone1.setName("Xperia Pro-I");
+                phone1.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");
                 queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
 
             
                 // SE AGREGA A PLANTA 3
-            
+
+                
                 Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                phone1.setName("Xperia 10 III");
+                phone1.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");                
                 queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
 
         
@@ -104,17 +111,23 @@ public class Admin {
                 // SE AGREGA A PLANTA 1
             
                 Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
+                phone1.setName("Xperia 10 IV");
+                phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");                
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
                             
                 // SE AGREGA A PLANTA 2
             
                 Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                phone1.setName("Xperia Pro-I");
+                phone1.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");                
                 queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
 
             
                 // SE AGREGA A PLANTA 3
             
                 Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                phone1.setName("Xperia 10 III");
+                phone1.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");                   
                 queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
 
             }
@@ -126,35 +139,37 @@ public class Admin {
     
     //DESENCOLA EL TELÉFONO DE LA COLA SELECCIONADA
     
-    private Phones dequeuePhone(Cola selectedQueue) {
+    private Phones dequeuePhone(Cola selectedQueue, Cola selectedQueue2, Cola selectedQueue3) {
         if (selectedQueue.getSize()>0) {
             Phones selected = (Phones) selectedQueue.desencolar();
             selected.resetCounter();
             return selected;
+        } else if (selectedQueue2.getSize()>0) {
+            Phones selected = (Phones) selectedQueue2.desencolar();
+            selected.resetCounter();
+            return selected;
+        } else if(selectedQueue3.getSize()>0) {
+            Phones selected = (Phones) selectedQueue3.desencolar();
+            selected.resetCounter();
+            return selected;
         } else {
-            //NO HAY TELEFONOS EN LA COLA
+            System.out.println("NO HAY TELÉFONOS EN COLA");
             return null;
+            
         }
     }
     
     
    
-    public void selectPhone(int plantN) {
-        switch (plantN) {
-            case 1:
-                {
-                    Phones queue1Phone = dequeuePhone(ProyectoSO2.level1QueueP1);
-                    Phones queue2Phone = dequeuePhone(ProyectoSO2.level2QueueP1);
-                    Phones queue3Phone = dequeuePhone(ProyectoSO2.level3QueueP1);
-                    if (queue1Phone == null && queue2Phone == null && queue3Phone == null) {
-                        System.out.println("NO HAY TELÉFONOS A SELECCIONAR");
+    public Phones selectPhone(int plantN) {
+        Phones phoneSelected = null;
+        if (plantN == 1) {
+                Phones dequeuePhone1 = dequeuePhone(ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
+                    if (dequeuePhone1 == null) {
+                        System.out.println("NO HAY TELÉFONOS");
                     } else {
-                        
-                        //Aquí se puede hacer otro condicional para que dependiendo del teléfono que salga en null este no se muestre
-                        //y solo se muestren los que no retornaron null
-                        System.out.println("Se desencolaron los teléfonos: " + queue1Phone.id + queue2Phone.id + queue1Phone.id);
+                        phoneSelected = dequeuePhone1;
                     }
-                    
             
                     
         //Cuando al Teléfono le toca el turno de ser revisado, este contador se pasa a cero. Por otra parte, cuando el
@@ -199,21 +214,18 @@ public class Admin {
                     ProyectoSO2.level3QueueP1 = auxQueueLevel3;
                     
                     
-                    break;
-                }
-            case 2:
-                {
-                    Phones queue1Phone = dequeuePhone(ProyectoSO2.level1QueueP2);
-                    Phones queue2Phone = dequeuePhone(ProyectoSO2.level2QueueP2);
-                    Phones queue3Phone = dequeuePhone(ProyectoSO2.level3QueueP2);
-                    if (queue1Phone == null && queue2Phone == null && queue3Phone == null) {
-                        System.out.println("NO HAY TELÉFONOS A SELECCIONAR");
+                   
+                } else if (plantN == 2){
+        
+        
+                Phones dequeuePhone2 = dequeuePhone(ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
+                    if (dequeuePhone2 == null) {
+                        System.out.println("NO HAY TELÉFONOS");
                     } else {
-                        
-                        //Aquí se puede hacer otro condicional para que dependiendo del teléfono que salga en null este no se muestre
-                        //y solo se muestren los que no retornaron null
-                        System.out.println("Se desencolaron los teléfonos: " + queue1Phone.id + queue2Phone.id + queue1Phone.id);
+                        phoneSelected = dequeuePhone2;
                     }
+                    
+                    
                     Cola auxQueueLevel2 = new Cola();
 
                     while(!ProyectoSO2.level2QueueP2.isEmpty()) {
@@ -250,20 +262,15 @@ public class Admin {
                     ProyectoSO2.level3QueueP2 = auxQueueLevel3;                    
                     
                     
-                    break;
+
                 }
-            case 3:
-                {
-                        Phones queue1Phone = dequeuePhone(ProyectoSO2.level1QueueP3);
-                        Phones queue2Phone = dequeuePhone(ProyectoSO2.level2QueueP3);
-                        Phones queue3Phone = dequeuePhone(ProyectoSO2.level3QueueP3);
-                        if (queue1Phone == null && queue2Phone == null && queue3Phone == null) {
-                                System.out.println("NO HAY TELÉFONOS A SELECCIONAR");
-                                } else {
-                        
-                        //Aquí se puede hacer otro condicional para que dependiendo del teléfono que salga en null este no se muestre
-                        //y solo se muestren los que no retornaron null
-                        System.out.println("Se desencolaron los teléfonos: " + queue1Phone.id + queue2Phone.id + queue1Phone.id);
+                else {
+                
+                Phones dequeuePhone3 = dequeuePhone(ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
+                    if (dequeuePhone3 == null) {
+                        System.out.println("NO HAY TELÉFONOS");
+                    } else {
+                        phoneSelected = dequeuePhone3;
                     }
                         
                     Cola auxQueueLevel2 = new Cola();
@@ -300,23 +307,26 @@ public class Admin {
                     }
                     
                     ProyectoSO2.level3QueueP3 = auxQueueLevel3;                          
-                        break;
                 }
-            default:
-                {
-                        break;
-                        }
-        }
+        
         
         Node first = ProyectoSO2.reforcementQueue.getFirst();
+        
+        
         for (int i = 0; i < ProyectoSO2.reforcementQueue.getSize(); i++) {
             Phones phone = (Phones) first.getData();
             phone.sumCounter();
-            first = first.getNext();
+            first = first.getNext(); }
+        
+        return phoneSelected;
+        
         }
+        
 
         
-    }
+
+        
+    
     
     
     
