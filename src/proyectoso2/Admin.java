@@ -5,6 +5,7 @@
 package proyectoso2;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -63,10 +64,9 @@ public class Admin {
     
     
     private int detQuality(int a, int probs, int prob1) {
-         Random rand = new Random(); 
        
         for (int i = 0; i < a; i++) {
-            if (rand.nextInt(probs) <= prob1){
+            if (ThreadLocalRandom.current().nextInt(0, probs) <= prob1){
                 return 400;
             }else{
                 return 0;
@@ -85,25 +85,24 @@ public class Admin {
       
         
         Random rand = new Random(); 
-        
-        int screenProbs = rand.nextInt(probs);
-        int pinProbs = rand.nextInt(probs);
-        int camProbs = rand.nextInt(probs);
-        int buttonProbs = rand.nextInt(probs);
+        int screenProbs = ThreadLocalRandom.current().nextInt(0, probs);
+        int pinProbs = ThreadLocalRandom.current().nextInt(0, probs);
+        int camProbs = ThreadLocalRandom.current().nextInt(0, probs);
+        int buttonProbs = ThreadLocalRandom.current().nextInt(0, probs);
         
         int total = 0;
         
-        int screenProbs2 = rand.nextInt(probs);
-        int pinProbs2 = rand.nextInt(probs);
-        int camProbs2 = rand.nextInt(probs);
-        int buttonProbs2 = rand.nextInt(probs);
+        int screenProbs2 = ThreadLocalRandom.current().nextInt(0, probs);
+        int pinProbs2 = ThreadLocalRandom.current().nextInt(0, probs);
+        int camProbs2 = ThreadLocalRandom.current().nextInt(0, probs);
+        int buttonProbs2 = ThreadLocalRandom.current().nextInt(0, probs);
         
         int total2 = 0;
         
-        int screenProbs3 = rand.nextInt(probs);
-        int pinProbs3 = rand.nextInt(probs);
-        int camProbs3 = rand.nextInt(probs);
-        int buttonProbs3 = rand.nextInt(probs);
+        int screenProbs3 = ThreadLocalRandom.current().nextInt(0, probs);
+        int pinProbs3 = ThreadLocalRandom.current().nextInt(0, probs);
+        int camProbs3 = ThreadLocalRandom.current().nextInt(0, probs);
+        int buttonProbs3 = ThreadLocalRandom.current().nextInt(0, probs);
         
         int total3 = 0;
        
@@ -586,12 +585,11 @@ public class Admin {
     
     //funcion para que en caso de un 40% de probabilidad se desencole el primer telefono
     
-    public void dequeueReforcement() {
-        Random rand = new Random(); 
+    public void dequeueReforcement() { 
     
-        int probability1 = rand.nextInt(100);     
-        int probability2 = rand.nextInt(100);     
-        int probability3 = rand.nextInt(100);     
+        int probability1 = ThreadLocalRandom.current().nextInt(0, 100);     
+        int probability2 = ThreadLocalRandom.current().nextInt(0, 100);       
+        int probability3 = ThreadLocalRandom.current().nextInt(0, 100);       
 
         
         

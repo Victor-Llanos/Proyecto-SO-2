@@ -5,7 +5,6 @@
 package proyectoso2;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
