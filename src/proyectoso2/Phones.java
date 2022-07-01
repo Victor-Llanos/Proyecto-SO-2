@@ -14,6 +14,7 @@ public class Phones {
     public int counter = 0;
     public int trophies = 0;
     public int plant = 0;
+    public int wr;
     
     public Phones (int id, int level, int trophies, int plant){
         this.id = id;
@@ -21,6 +22,7 @@ public class Phones {
         this.counter = 0;
         this.trophies = trophies;
         this.plant = plant;
+        this.wr = DeckBuilder.deckWR();
     }
     
     public void setTrophies(int trophies) {
