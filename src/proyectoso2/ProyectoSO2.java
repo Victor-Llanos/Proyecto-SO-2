@@ -43,7 +43,8 @@ public class ProyectoSO2 {
         simu.setTitle("Plantas sony");
         simu.setLocationRelativeTo(null);
         simu.setVisible(true);
-
+        
+        
         while (true) {
             phone1 = admin.selectPhone(1);
             phone2 = admin.selectPhone(2);

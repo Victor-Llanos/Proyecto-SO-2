@@ -76,6 +76,7 @@ public class AI {
             }
         }
         if (buenos) {
+            
             if ((ph[2].wr == ph[0].wr) && (ph[0].wr == ph[1].wr)) {
                 for (Phones ph1 : ph) {
                     admin.reEnqueue(ph1);

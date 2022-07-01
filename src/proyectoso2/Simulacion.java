@@ -38,16 +38,20 @@ public class Simulacion extends javax.swing.JFrame {
 public DefaultListModel writeJlist(Cola cola, Node node, DefaultListModel queue) {
     for (int i = 0; i < cola.getSize(); i++) {
         Phones phone = (Phones) node.getData();
-        queue.addElement("ID" + phone.id + "Nombre: " + phone.name + "Info:" + phone.info);
+        queue.addElement("ID: " + phone.id + " Trofeos: " + phone.trophies);
         node = node.getNext();
     }
     return queue;
 }
     
 public void updateQueuesP1(Cola queue1, Cola queue2, Cola queue3, Cola reforce) {
+            idPlant1.setText("Xperia 10 IV");
+
     Node first1 = queue1.getFirst();
     Node first2 = queue2.getFirst();
     Node first3 = queue3.getFirst();
+    Node firstR = reforce.getFirst();
+
     
     levelQueue1P1.removeAllElements();
     levelQueue1P1 = writeJlist(queue1, first1, levelQueue1P1);
@@ -64,12 +68,17 @@ public void updateQueuesP1(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
     jList3.setModel(levelQueue3P1);
     cont3.setText(Integer.toString(queue3.getSize()));
     
-    
+    reforcementQueue1.removeAllElements();
+    reforcementQueue1 = writeJlist(reforce, firstR, reforcementQueue1);
+    jListR1.setModel(reforcementQueue1);     
             }    
 public void updateQueuesP2(Cola queue1, Cola queue2, Cola queue3, Cola reforce) {
+        idPlant2.setText("Xperia 10 III");
+
     Node first1 = queue1.getFirst();
     Node first2 = queue2.getFirst();
     Node first3 = queue3.getFirst();
+    Node firstR = reforce.getFirst();
     
     levelQueue1P2.removeAllElements();
     levelQueue1P2 = writeJlist(queue1, first1, levelQueue1P2);
@@ -85,50 +94,60 @@ public void updateQueuesP2(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
     levelQueue3P2 = writeJlist(queue3, first3, levelQueue3P2);
     jList6.setModel(levelQueue3P2);
     cont6.setText(Integer.toString(queue3.getSize()));
-    
+ 
+    reforcementQueue2.removeAllElements();
+    reforcementQueue2 = writeJlist(reforce, firstR, reforcementQueue2);
+    jListR2.setModel(reforcementQueue2);    
     
             }    
 public void updateQueuesP3(Cola queue1, Cola queue2, Cola queue3, Cola reforce) {
+    idPlant3.setText("Xperia Pro-1");
     Node first1 = queue1.getFirst();
     Node first2 = queue2.getFirst();
     Node first3 = queue3.getFirst();
+    Node firstR = reforce.getFirst();
+    
     
     levelQueue1P3.removeAllElements();
     levelQueue1P3 = writeJlist(queue1, first1, levelQueue1P3);
-    jList7.setModel(levelQueue1P1);
+    jList7.setModel(levelQueue1P3);
     cont7.setText(Integer.toString(queue1.getSize()));
 
     levelQueue2P3.removeAllElements();
     levelQueue2P3 = writeJlist(queue2, first2, levelQueue2P3);
-    jList8.setModel(levelQueue2P1);
+    jList8.setModel(levelQueue2P3);
     cont8.setText(Integer.toString(queue2.getSize()));
 
     levelQueue3P3.removeAllElements();
     levelQueue3P3 = writeJlist(queue3, first3, levelQueue3P3);
     jList9.setModel(levelQueue3P3);
     cont9.setText(Integer.toString(queue3.getSize()));
-    
+
+    reforcementQueue3.removeAllElements();
+    reforcementQueue3 = writeJlist(reforce, firstR, reforcementQueue3);
+    jListR3.setModel(reforcementQueue3);
+
     
             }    
     
-    
-public void updateRevision (Phones phone) {
-    if (phone == null) {
-        idPlant1.setText("No se ha seleccionado");
-        idPlant2.setText("No se ha seleccionado");
-        idPlant3.setText("No se ha seleccionado");
-    } else {
-      
-        if (phone.plant == 1) {
-          idPlant1.setText(Integer.toString(phone.id));
-      } else if(phone.plant == 2) {
-          idPlant2.setText(Integer.toString(phone.id));        
-      } else if (phone.plant == 3){
-          idPlant3.setText(Integer.toString(phone.id));        
-        
-    } 
-    }
-}    
+//    
+//public void updateRevision (Phones phone, Phones phone2, Phones phone3) {
+//    if (phone == null) {
+//        idPlant1.setText("No se ha seleccionado");
+//        idPlant2.setText("No se ha seleccionado");
+//        idPlant3.setText("No se ha seleccionado");
+//    } else {
+//      
+//        if (phone.plant == 1) {
+//          idPlant1.setText(Integer.toString(phone.id));
+//      } else if(phone.plant == 2) {
+//          idPlant2.setText(Integer.toString(phone.id));        
+//      } else if (phone.plant == 3){
+//          idPlant3.setText(Integer.toString(phone.id));        
+//        
+//    } 
+//    }
+//}    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,15 +164,15 @@ public void updateRevision (Phones phone) {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        p3c3 = new javax.swing.JList<>();
+        jListR3 = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        p1c3 = new javax.swing.JList<>();
+        jListR1 = new javax.swing.JList<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         jList4 = new javax.swing.JList<>();
         jScrollPane6 = new javax.swing.JScrollPane();
         jList5 = new javax.swing.JList<>();
         jScrollPane7 = new javax.swing.JScrollPane();
-        p2c3 = new javax.swing.JList<>();
+        jListR2 = new javax.swing.JList<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jList7 = new javax.swing.JList<>();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -162,19 +181,10 @@ public void updateRevision (Phones phone) {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        contP3 = new javax.swing.JTextField();
         cont3 = new javax.swing.JTextField();
         status = new javax.swing.JTextField();
         idPlant2 = new javax.swing.JTextField();
-        contP2 = new javax.swing.JTextField();
         idPlant3 = new javax.swing.JTextField();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        contP1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
         jScrollPane15 = new javax.swing.JScrollPane();
@@ -225,13 +235,13 @@ public void updateRevision (Phones phone) {
         jLabel4.setText("Planta N°2");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
-        p3c3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jScrollPane1.setViewportView(p3c3);
+        jListR3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jScrollPane1.setViewportView(jListR3);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 130, 170));
 
-        p1c3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jScrollPane4.setViewportView(p1c3);
+        jListR1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jScrollPane4.setViewportView(jListR1);
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 130, 170));
 
@@ -245,8 +255,8 @@ public void updateRevision (Phones phone) {
 
         jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 130, 170));
 
-        p2c3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jScrollPane7.setViewportView(p2c3);
+        jListR2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jScrollPane7.setViewportView(jListR2);
 
         jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 370, 130, 170));
 
@@ -280,15 +290,6 @@ public void updateRevision (Phones phone) {
         jLabel8.setText("Cola N°1");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, -1, -1));
 
-        contP3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        contP3.setEnabled(false);
-        contP3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contP3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(contP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 630, 120, -1));
-
         cont3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         cont3.setEnabled(false);
         cont3.addActionListener(new java.awt.event.ActionListener() {
@@ -316,15 +317,6 @@ public void updateRevision (Phones phone) {
         });
         jPanel1.add(idPlant2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, -1));
 
-        contP2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        contP2.setEnabled(false);
-        contP2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contP2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(contP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 120, -1));
-
         idPlant3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         idPlant3.setEnabled(false);
         idPlant3.addActionListener(new java.awt.event.ActionListener() {
@@ -333,36 +325,6 @@ public void updateRevision (Phones phone) {
             }
         });
         jPanel1.add(idPlant3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 590, 120, -1));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setEnabled(false);
-        jScrollPane11.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 680, 180, -1));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setEnabled(false);
-        jScrollPane12.setViewportView(jTextArea2);
-
-        jPanel1.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 180, -1));
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setEnabled(false);
-        jScrollPane13.setViewportView(jTextArea3);
-
-        jPanel1.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 180, -1));
-
-        contP1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        contP1.setEnabled(false);
-        contP1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contP1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(contP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 120, -1));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -485,10 +447,6 @@ public void updateRevision (Phones phone) {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void contP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contP3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contP3ActionPerformed
-
     private void cont3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cont3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cont3ActionPerformed
@@ -501,17 +459,9 @@ public void updateRevision (Phones phone) {
         // TODO add your handling code here:
     }//GEN-LAST:event_idPlant2ActionPerformed
 
-    private void contP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contP2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contP2ActionPerformed
-
     private void idPlant3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlant3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idPlant3ActionPerformed
-
-    private void contP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contP1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contP1ActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         System.exit(0);
@@ -600,9 +550,6 @@ public void updateRevision (Phones phone) {
     private javax.swing.JTextField cont7;
     private javax.swing.JTextField cont8;
     private javax.swing.JTextField cont9;
-    private javax.swing.JTextField contP1;
-    private javax.swing.JTextField contP2;
-    private javax.swing.JTextField contP3;
     private javax.swing.JButton exit;
     private javax.swing.JTextField idPlant1;
     private javax.swing.JTextField idPlant2;
@@ -625,12 +572,12 @@ public void updateRevision (Phones phone) {
     private javax.swing.JList<String> jList7;
     private javax.swing.JList<String> jList8;
     private javax.swing.JList<String> jList9;
+    private javax.swing.JList<String> jListR1;
+    private javax.swing.JList<String> jListR2;
+    private javax.swing.JList<String> jListR3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
@@ -641,12 +588,6 @@ public void updateRevision (Phones phone) {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JList<String> p1c3;
-    private javax.swing.JList<String> p2c3;
-    private javax.swing.JList<String> p3c3;
     private javax.swing.JTextField status;
     // End of variables declaration//GEN-END:variables
 }
