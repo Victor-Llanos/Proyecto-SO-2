@@ -112,6 +112,7 @@ public class AI {
                 if (ph1.good) {
                     admin.reEnqueue(ph1);
                 } else {
+                    ph1.good = true;
                     admin.enqueueReforcement(ph1);
                 }
 
