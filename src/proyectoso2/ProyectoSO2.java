@@ -35,12 +35,12 @@ public class ProyectoSO2 {
     public static void main(String[] args) {
         Admin admin = new Admin();
         admin.addPhone();
-        AI ai = new AI();
+//        AI ai = new AI();
         
-        Simulacion window = new Simulacion();
-        window.setTitle("Phones Clash Royale");
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
+//        Simulacion window = new Simulacion();
+//        window.setTitle("Phones Clash Royale");
+//        window.setLocationRelativeTo(null);
+//        window.setVisible(true);
     }
     
 }

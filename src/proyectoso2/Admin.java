@@ -64,10 +64,12 @@ public class Admin {
     
     private int detQuality(int a, int probs, int prob1) {
          Random rand = new Random(); 
-       
+         int min = 400;
+         int max = 1000;
+        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);         
         for (int i = 0; i < a; i++) {
             if (rand.nextInt(probs) <= prob1){
-                return 400;
+                return random_int;
             }else{
                 return 0;
             }
@@ -143,12 +145,23 @@ public class Admin {
                 phone1.setName("Xperia 10 IV");
                 phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1);
+                System.out.println(phone1.getName());
+                System.out.println(phone1.id);
+                System.out.println(phone1.good);
+                System.out.println(phone1.trophies);
+                
             
         } else {
                            Phones phone1 = returnPhoneAdded(total, 1, true);
                 phone1.setName("Xperia 10 IV");
                 phone1.setInfo("3 cámaras, 1 pantalla, 4 botones. Precio: 900$");
                 queueLevel(phone1, ProyectoSO2.level1QueueP1, ProyectoSO2.level2QueueP1, ProyectoSO2.level3QueueP1); 
+                                System.out.println(phone1.getName());
+                System.out.println(phone1.id);
+                                System.out.println(phone1.good);
+                System.out.println(phone1.trophies);
+                                
+
         }
         
         //Screen
@@ -176,12 +189,24 @@ public class Admin {
                     phone2.setName("Xperia 10 III");
                     phone2.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");  
                    queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2);
+                System.out.println(phone2.getName());
+                System.out.println(phone2.id);
+                                System.out.println(phone2.good);
+                System.out.println(phone2.trophies);
+                                
 
            } else {
                    Phones phone2 = returnPhoneAdded(total2, 2, true);
                     phone2.setName("Xperia 10 III");
                     phone2.setInfo("2 cámaras, 1 pantalla, 2 botones. Precio: 600$");  
                    queueLevel(phone2, ProyectoSO2.level1QueueP2, ProyectoSO2.level2QueueP2, ProyectoSO2.level3QueueP2); 
+                   
+                System.out.println(phone2.getName());
+                System.out.println(phone2.id);     
+                System.out.println(phone2.good);
+                System.out.println(phone2.trophies);
+                
+                
            }       
         
         
@@ -205,12 +230,22 @@ public class Admin {
                     phone3.setName("Xperia Pro-I");
                     phone3.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");  
                    queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
-
+                System.out.println(phone3.getName());
+                System.out.println(phone3.id);
+                System.out.println(phone3.good);
+                System.out.println(phone3.trophies);
+                
            } else {
                    Phones phone3 = returnPhoneAdded(total3, 3, true);
                     phone3.setName("Xperia Pro-I");
                     phone3.setInfo("4 cámaras, 2 pantalla (plegable), 3 botones. Precio: 1050$");  
-                   queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3); 
+                   queueLevel(phone3, ProyectoSO2.level1QueueP3, ProyectoSO2.level2QueueP3, ProyectoSO2.level3QueueP3);
+                   
+                System.out.println(phone3.getName());
+                System.out.println(phone3.id);
+                System.out.println(phone3.good);
+                System.out.println(phone3.trophies);
+                
            }  
         
         } else {
