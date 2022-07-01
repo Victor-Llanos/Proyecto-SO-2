@@ -113,6 +113,8 @@ public class AI {
             }
         }
         if (win) {
+            System.out.println(ganador.name);
+            System.out.println(ganador.info);
             DataManage.writeData(ganador);
         } else if (draw) {
             for (Phones empatado : empatados) {

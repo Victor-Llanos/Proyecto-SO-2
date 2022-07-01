@@ -32,10 +32,24 @@ public class ProyectoSO2 {
     public static Cola level3QueueP3 = new Cola();
     
     
+
+    
     public static void main(String[] args) {
         Admin admin = new Admin();
         admin.addPhone();
-//        AI ai = new AI();
+        
+        
+        AI ai = new AI();
+        
+        Phones phone1 = admin.selectPhone(1);
+        Phones phone2 = admin.selectPhone(2);
+        Phones phone3 = admin.selectPhone(3);
+        
+        Phones phones[] = {phone1, phone2, phone3};
+        
+        System.out.println("Ganó:");
+        ai.battle(phones);
+        
         
 //        Simulacion window = new Simulacion();
 //        window.setTitle("Phones Clash Royale");
