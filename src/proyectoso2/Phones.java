@@ -16,13 +16,18 @@ public class Phones {
     public int plant = 0;
     public String name = "";
     public String info = "";
+    public boolean good;
+
     
-    public Phones (int id, int level, int trophies, int plant){
+    
+    public Phones (int id, int level, int trophies, int plant, boolean good){
         this.id = id;
         this.level = level;
         this.counter = 0;
         this.trophies = trophies;
         this.plant = plant;
+        this.good = good;        
+
 
     }
 
@@ -40,11 +45,17 @@ public class Phones {
 
     public void setInfo(String info) {
         this.info = info;
+
     }
-    
+
+    public void setGood(boolean good) {
+        this.good = good;
+    }
+   
     public void setTrophies(int trophies) {
         this.trophies = trophies;
     }
+    
     public void setLevel(int level) {
         this.level = level;
     }
