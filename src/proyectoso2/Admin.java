@@ -40,34 +40,166 @@ public class Admin {
     public void addPhone () {
         //se establecen los limites de nivel
         
-        int limit = 4000;
-        
-        //genera el número random de copas para las tres plantas
+        int probs = 100;
+        Phones phone = new Phones();
+        Phones phone2 = new Phones();
+        Phones phone3 = new Phones();
+        //Se suman las copas determinadas por el porcentaje de exitos por pieza del telefono, de cada de telefono
       
         
         Random rand = new Random(); 
-     
-        int levelthropsP1 = rand.nextInt(limit);     
-        int levelthropsP2 = rand.nextInt(limit);  
-        int levelthropsP3 = rand.nextInt(limit);  
+        
+        int screenProbs = rand.nextInt(probs);
+        int pinProbs = rand.nextInt(probs);
+        int camProbs = rand.nextInt(probs);
+        int buttonProbs = rand.nextInt(probs);
+        
+        int total = 0;
+        
+        int screenProbs2 = rand.nextInt(probs);
+        int pinProbs2 = rand.nextInt(probs);
+        int camProbs2 = rand.nextInt(probs);
+        int buttonProbs2 = rand.nextInt(probs);
+        
+        int total2 = 0;
+        
+        int screenProbs3 = rand.nextInt(probs);
+        int pinProbs3 = rand.nextInt(probs);
+        int camProbs3 = rand.nextInt(probs);
+        int buttonProbs3 = rand.nextInt(probs);
+        
+        int total3 = 0;
+       
+        //Telefono Xperia 10 IV
+        
+        //Screen
+        for (int i = 0; i < 2; i++) {
+            if (screenProbs <= 75){
+                total += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Pin
+        for (int i = 0; i < 2; i++) {
+            if (pinProbs <= 84){
+                total += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Cam
+        for (int i = 0; i < 4; i++) {
+            if (camProbs <= 80){
+                total += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Button
+        for (int i = 0; i < 5; i++) {
+            if (buttonProbs <= 85){
+                total += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Telefono Xperia 10 III
+        
+        //Screen
+        for (int i = 0; i < 2; i++) {
+            if (screenProbs <= 75){
+                total2 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Pin
+        for (int i = 0; i < 2; i++) {
+            if (pinProbs <= 84){
+                total2 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Cam
+        for (int i = 0; i < 3; i++) {
+            if (camProbs <= 80){
+                total2 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Button
+        for (int i = 0; i < 3; i++) {
+            if (buttonProbs <= 85){
+                total2 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Telefono Xperia Pro-I
+        
+        //Screen
+        for (int i = 0; i < 3; i++) {
+            if (screenProbs <= 75){
+                total3 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Pin
+        for (int i = 0; i < 2; i++) {
+            if (pinProbs <= 84){
+                total3 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Cam
+        for (int i = 0; i < 5; i++) {
+            if (camProbs <= 80){
+                total3 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
+        
+        //Button
+        for (int i = 0; i < 4; i++) {
+            if (buttonProbs <= 85){
+                total3 += 300;
+            }else{
+                phone.setGood(false);
+            }
+        }
         
         if (ProyectoSO2.released == 0) {
               
             
-
                 // SE AGREGA A PLANTA 1
             
-                Phones phone1 = returnPhoneAdded(levelthropsP1, 1);
-                ProyectoSO2.level1QueueP1.encolar(phone1);
+                phone = returnPhoneAdded(total, 1);
+                ProyectoSO2.level1QueueP1.encolar(phone);
                             
                 // SE AGREGA A PLANTA 2
             
-                Phones phone2 = returnPhoneAdded(levelthropsP2, 2);
+                phone2 = returnPhoneAdded(total2, 2);
                 ProyectoSO2.level1QueueP2.encolar(phone2);
             
                 // SE AGREGA A PLANTA 3
             
-                Phones phone3 = returnPhoneAdded(levelthropsP3, 3);
+                phone3 = returnPhoneAdded(total3, 3);
                 ProyectoSO2.level1QueueP3.encolar(phone3);
 
         
