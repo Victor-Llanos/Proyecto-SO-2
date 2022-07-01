@@ -5,6 +5,7 @@
 package proyectoso2;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
@@ -53,6 +54,69 @@ public class AI {
         }
         ProyectoSO2.addingCounter++;
     }
-    
+
+    public void battle(Phones[] ph) {
+        Admin admin = new Admin();
+        int rand = ThreadLocalRandom.current().nextInt(0, 101);
+        boolean buenos = true;
+        Phones ganador = null;
+        Phones[] empatados = new Phones[2];
+        boolean win = false;
+        boolean draw = false;
+        boolean none = false;
+        for (Phones ph1 : ph) {
+            if (!ph1.good) {
+                buenos = false;
+            }
+        }
+        if (buenos) {
+            if ((ph[2].wr == ph[0].wr) && (ph[0].wr == ph[1].wr)) {
+                for (Phones ph1 : ph) {
+                    admin.reEnqueue(ph1);
+                    none = true;
+                }
+
+            } else if (ph[0].wr > ph[1].wr) {
+                if (ph[0].wr > ph[2].wr) {
+                    ganador = ph[0];
+                    win = true;
+                } else {
+                    empatados[0] = ph[0];
+                    empatados[1] = ph[2];
+                    draw = true;
+                }
+
+            } else if (ph[1].wr > ph[0].wr) {
+                if (ph[1].wr > ph[2].wr) {
+                    ganador = ph[1];
+                    win = true;
+                } else {
+                    empatados[0] = ph[1];
+                    empatados[1] = ph[2];
+                    draw = true;
+                }
+
+            } else {
+                if (ph[2].wr > ph[0].wr) {
+                    ganador = ph[2];
+                    win = true;
+                } else {
+                    empatados[0] = ph[0];
+                    empatados[1] = ph[1];
+                    draw = true;
+                }
+
+            }
+        } else {
+
+        }
+        if (win) {
+            DataManage.writeData(ganador);
+        } else if (draw) {
+            for (Phones empatado : empatados) {
+                admin.reEnqueue(empatado);
+            }
+        }
+    }
 
 }

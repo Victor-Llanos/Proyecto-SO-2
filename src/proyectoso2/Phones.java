@@ -15,6 +15,7 @@ public class Phones {
     public int trophies = 0;
     public int plant = 0;
     public int wr;
+    boolean good;
     
     public Phones (int id, int level, int trophies, int plant){
         this.id = id;
