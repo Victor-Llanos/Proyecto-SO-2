@@ -119,6 +119,7 @@ public class AI {
             }
         }
         if (win) {
+            System.out.println("Ganó:");
             System.out.println(ganador.name);
             System.out.println(ganador.info);
             DataManage.writeData(ganador);
@@ -126,6 +127,9 @@ public class AI {
             for (Phones empatado : empatados) {
                 admin.reEnqueue(empatado);
             }
+            
+            System.out.println("Empatados:");
+            System.out.println(empatados[0].name + " vs. " + empatados[1].name);
         }
         ProyectoSO2.addingCounter++;
     }

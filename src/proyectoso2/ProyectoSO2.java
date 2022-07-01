@@ -37,18 +37,32 @@ public class ProyectoSO2 {
     public static void main(String[] args) {
         Admin admin = new Admin();
         admin.addPhone();
-        
-        
         AI ai = new AI();
         
-        Phones phone1 = admin.selectPhone(1);
-        Phones phone2 = admin.selectPhone(2);
-        Phones phone3 = admin.selectPhone(3);
+        Phones phone1;
+        Phones phone2;
+        Phones phone3;
         
-        Phones phones[] = {phone1, phone2, phone3};
+        Simulacion simu = new Simulacion();
+        simu.setTitle("Plantas sony");
+        simu.setLocationRelativeTo(null);
+        simu.setVisible(true);
         
-        System.out.println("Ganó:");
-        ai.battle(phones);
+        while (true) {
+            phone1 = admin.selectPhone(1);
+            
+            simu.updateQueuesP1(level1QueueP1, level2QueueP1, level3QueueP1, reforcementQueue1);
+            simu.updateQueuesP2(level1QueueP2, level2QueueP2, level3QueueP2, reforcementQueue2);
+            simu.updateQueuesP3(level1QueueP3, level2QueueP3, level3QueueP3, reforcementQueue3);
+            
+            
+            
+        
+        }
+        
+        
+
+        
         
         
 //        Simulacion window = new Simulacion();
