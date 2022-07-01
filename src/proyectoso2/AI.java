@@ -57,7 +57,6 @@ public class AI {
 
     public void battle(Phones[] ph) {
         Admin admin = new Admin();
-        int rand = ThreadLocalRandom.current().nextInt(0, 101);
         boolean buenos = true;
         Phones ganador = null;
         Phones[] empatados = new Phones[2];
@@ -67,6 +66,7 @@ public class AI {
         for (Phones ph1 : ph) {
             if (!ph1.good) {
                 buenos = false;
+
             }
         }
         if (buenos) {
@@ -108,7 +108,9 @@ public class AI {
 
             }
         } else {
-
+            for (Phones ph1 : ph) {
+                admin.enqueueReforcement(ph1);
+            }
         }
         if (win) {
             DataManage.writeData(ganador);
