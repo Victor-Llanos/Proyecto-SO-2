@@ -109,7 +109,12 @@ public class AI {
             }
         } else {
             for (Phones ph1 : ph) {
-                admin.enqueueReforcement(ph1);
+                if (ph1.good) {
+                    admin.reEnqueue(ph1);
+                } else {
+                    admin.enqueueReforcement(ph1);
+                }
+
             }
         }
         if (win) {
