@@ -119,6 +119,7 @@ public class AI {
                 admin.reEnqueue(empatado);
             }
         }
+        ProyectoSO2.addingCounter++;
     }
 
 }
