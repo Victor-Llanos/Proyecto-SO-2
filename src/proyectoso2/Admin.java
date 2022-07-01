@@ -75,7 +75,7 @@ public class Admin {
         //Screen
         for (int i = 0; i < 2; i++) {
             if (screenProbs <= 75){
-                total += 300;
+                total += 400;
             }else{
                 phone.setGood(false);
             }
@@ -84,7 +84,7 @@ public class Admin {
         //Pin
         for (int i = 0; i < 2; i++) {
             if (pinProbs <= 84){
-                total += 300;
+                total += 400;
             }else{
                 phone.setGood(false);
             }
@@ -93,7 +93,7 @@ public class Admin {
         //Cam
         for (int i = 0; i < 4; i++) {
             if (camProbs <= 80){
-                total += 300;
+                total += 400;
             }else{
                 phone.setGood(false);
             }
@@ -102,7 +102,7 @@ public class Admin {
         //Button
         for (int i = 0; i < 5; i++) {
             if (buttonProbs <= 85){
-                total += 300;
+                total += 400;
             }else{
                 phone.setGood(false);
             }
@@ -113,7 +113,7 @@ public class Admin {
         //Screen
         for (int i = 0; i < 2; i++) {
             if (screenProbs <= 75){
-                total2 += 300;
+                total2 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -122,7 +122,7 @@ public class Admin {
         //Pin
         for (int i = 0; i < 2; i++) {
             if (pinProbs <= 84){
-                total2 += 300;
+                total2 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -131,7 +131,7 @@ public class Admin {
         //Cam
         for (int i = 0; i < 3; i++) {
             if (camProbs <= 80){
-                total2 += 300;
+                total2 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -140,7 +140,7 @@ public class Admin {
         //Button
         for (int i = 0; i < 3; i++) {
             if (buttonProbs <= 85){
-                total2 += 300;
+                total2 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -151,7 +151,7 @@ public class Admin {
         //Screen
         for (int i = 0; i < 3; i++) {
             if (screenProbs <= 75){
-                total3 += 300;
+                total3 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -160,7 +160,7 @@ public class Admin {
         //Pin
         for (int i = 0; i < 2; i++) {
             if (pinProbs <= 84){
-                total3 += 300;
+                total3 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -169,7 +169,7 @@ public class Admin {
         //Cam
         for (int i = 0; i < 5; i++) {
             if (camProbs <= 80){
-                total3 += 300;
+                total3 += 400;
             }else{
                 phone.setGood(false);
             }
@@ -178,7 +178,7 @@ public class Admin {
         //Button
         for (int i = 0; i < 4; i++) {
             if (buttonProbs <= 85){
-                total3 += 300;
+                total3 += 400;
             }else{
                 phone.setGood(false);
             }
