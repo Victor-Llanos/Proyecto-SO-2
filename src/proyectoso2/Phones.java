@@ -14,9 +14,11 @@ public class Phones {
     public int counter = 0;
     public int trophies = 0;
     public int plant = 0;
+    public int wr;
     public String name = "";
     public String info = "";
     public boolean good;
+
 
     
     
@@ -26,7 +28,11 @@ public class Phones {
         this.counter = 0;
         this.trophies = trophies;
         this.plant = plant;
+
+        this.wr = DeckBuilder.deckWR();
+
         this.good = good;        
+
 
 
     }
