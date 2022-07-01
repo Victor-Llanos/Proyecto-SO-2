@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
  * @author mvlop
  */
 public class AI {
-
+    
+    String status = "Chilling";
     public void iaProbability(Phones phone) {
         Admin admin = new Admin();
 
@@ -54,8 +55,11 @@ public class AI {
         ProyectoSO2.addingCounter++;
     }
 
-    public void battle(Phones[] ph) {
+    public void battle(Phones[] ph, Simulacion simu) {
         try {
+            status = "Battling";
+            simu.iaStatus("Battling");
+
             TimeUnit.SECONDS.sleep(DataManage.readTime());
 
         } catch (InterruptedException ex) {
@@ -139,6 +143,19 @@ public class AI {
             System.out.println(empatados[0].name + " vs. " + empatados[1].name);
         }
         ProyectoSO2.addingCounter++;
+        try {
+            status = "Chilling";
+            
+            simu.iaStatus(status);
+            
+            TimeUnit.SECONDS.sleep(DataManage.readTime());
+            
+
+
+        } catch (InterruptedException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error inesperado con la AI", "ERROR", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
     }
 
 }

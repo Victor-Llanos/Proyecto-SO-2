@@ -34,7 +34,12 @@ public class Simulacion extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
-
+    
+public void iaStatus(String ai){
+    statusia.setText(ai);
+//    System.out.println("///////" + ai.status);
+}    
+    
 public DefaultListModel writeJlist(Cola cola, Node node, DefaultListModel queue) {
     for (int i = 0; i < cola.getSize(); i++) {
         Phones phone = (Phones) node.getData();
@@ -182,7 +187,7 @@ public void updateQueuesP3(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cont3 = new javax.swing.JTextField();
-        status = new javax.swing.JTextField();
+        statusia = new javax.swing.JTextField();
         idPlant2 = new javax.swing.JTextField();
         idPlant3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -299,14 +304,14 @@ public void updateQueuesP3(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
         });
         jPanel1.add(cont3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 130, -1));
 
-        status.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        status.setEnabled(false);
-        status.addActionListener(new java.awt.event.ActionListener() {
+        statusia.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        statusia.setEnabled(false);
+        statusia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statusActionPerformed(evt);
+                statusiaActionPerformed(evt);
             }
         });
-        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 170, -1));
+        jPanel1.add(statusia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 170, -1));
 
         idPlant2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         idPlant2.setEnabled(false);
@@ -451,9 +456,9 @@ public void updateQueuesP3(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
         // TODO add your handling code here:
     }//GEN-LAST:event_cont3ActionPerformed
 
-    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
+    private void statusiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_statusActionPerformed
+    }//GEN-LAST:event_statusiaActionPerformed
 
     private void idPlant2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlant2ActionPerformed
         // TODO add your handling code here:
@@ -588,6 +593,6 @@ public void updateQueuesP3(Cola queue1, Cola queue2, Cola queue3, Cola reforce) 
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField status;
+    private javax.swing.JTextField statusia;
     // End of variables declaration//GEN-END:variables
 }

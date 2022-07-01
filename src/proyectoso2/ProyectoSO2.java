@@ -55,9 +55,11 @@ public class ProyectoSO2 {
             simu.updateQueuesP3(level1QueueP3, level2QueueP3, level3QueueP3, reforcementQueue3);
 
             Phones[] ph = {phone1, phone2, phone3};
-
-            ai.battle(ph);
-
+            
+            
+            ai.battle(ph, simu);
+            
+            
             if (addingCounter == 2) {
                 admin.addPhone();
                 addingCounter = 0;
