@@ -50,12 +50,23 @@ public class ProyectoSO2 {
         
         while (true) {
             phone1 = admin.selectPhone(1);
-            phone1 = admin.selectPhone(2);
-            phone1 = admin.selectPhone(3);
+            phone2 = admin.selectPhone(2);
+            phone3 = admin.selectPhone(3);
             
             simu.updateQueuesP1(level1QueueP1, level2QueueP1, level3QueueP1, reforcementQueue1);
             simu.updateQueuesP2(level1QueueP2, level2QueueP2, level3QueueP2, reforcementQueue2);
             simu.updateQueuesP3(level1QueueP3, level2QueueP3, level3QueueP3, reforcementQueue3);
+            
+            Phones[] ph = {phone1, phone2, phone3};
+            
+            ai.battle(ph);
+            
+
+            if(addingCounter == 2){
+                admin.addPhone();
+                addingCounter = 0;
+                
+            }
             
             
             
